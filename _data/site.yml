@@ -1,15 +1,15 @@
 hero:
   intro: mi chiamo
   name: Gabriel Jones
-  tagline: Costruisco siti, disegno idee, insegno a giocare.
+  tagline: Mi piace fare, davvero tante cose! Disegno, costruisco e mi metto all'opera.
   cta_primary: Scrivimi
   cta_secondary: Scopri Playbook
 
-intro_text: "Un sito personale, una raccolta di oltre duecento giochi per educatori e un’idea fissa: imparare funziona meglio quando è ben giocato."
+intro_text: "Mi chiamo Gabriel Jones, studio grafica e comunicazione, adoro costruire siti e sono un animatore <3"
 
 areas:
-  - { title: Sviluppo web, color: pink, url: "/portfolio/#sviluppo-web" }
-  - { title: Grafica, color: green, url: "/portfolio/#grafica" }
+  - { title: Sviluppo web, color: pink, url: "/sviluppo/" }
+  - { title: Grafica, color: green, url: "/portfolio/" }
   - { title: Educazione, color: blue, url: "/blog/#educazione" }
 
 playbook:
@@ -31,8 +31,8 @@ playbook:
   news_tagline: Novità dal lavoro e dalla ricerca.
 
 featured:
-  - { icon: "🎲", title: Playbook, link: Scopri, url: /playbook/, color: wine, dark: false }
-  - { icon: "🎨", title: Portfolio, link: Sfoglia, url: /portfolio/, color: green, dark: false }
+  - { icon: "🎲", title: Playbook, link: Scopri, url: /playbook/, color: wine, dark: "false" }
+  - { icon: "🎨", title: Portfolio, link: Sfoglia, url: /portfolio/, color: green, dark: "false" }
   - { icon: "🎬", title: Blog, link: "Film, libri, pop", url: /blog/, color: blue, dark: true }
   - { icon: "📣", title: News, link: Segui, url: /news/, color: yellow, dark: true }
 

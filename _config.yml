@@ -1,8 +1,8 @@
 title: Gabriel Jones
 description: Costruisco siti, disegno idee, insegno a giocare.
 lang: it
-url: "gabrieljones.github.io"
-baseurl: "/psychic-lamp/"
+url: "prismatic-elf-7aa926.netlify.app"
+baseurl: ""
 permalink: /blog/:year/:month/:day/:title/
 timezone: Europe/Rome
 markdown: kramdown
