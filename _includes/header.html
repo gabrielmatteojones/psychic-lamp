@@ -1,0 +1,37 @@
+<header class="site-header" id="top">
+  <div class="bar">
+    <button class="menu-btn" type="button" data-open="menu" aria-label="Apri il menu">
+      <span class="burger"><i></i><i></i></span><span class="lbl">Menu</span>
+    </button>
+    <a class="logo" href="{{ '/' | relative_url }}">Gabriel Jones</a>
+    <button class="search-btn" type="button" data-open="search" aria-label="Apri la ricerca">
+      <span class="lbl">Cerca</span>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><circle cx="10" cy="10" r="7"/><path d="m21 21-6-6"/></svg>
+    </button>
+  </div>
+  <nav class="main-nav" aria-label="Principale">
+    {% for item in site.data.navigation %}
+      {% assign active = false %}
+      {% if item.url == '/' and page.url == '/' %}{% assign active = true %}{% elsif item.url != '/' and page.url contains item.url %}{% assign active = true %}{% endif %}
+      <a href="{{ item.url | relative_url }}"{% if active %} class="active" aria-current="page"{% endif %}>{{ item.title }}</a>
+    {% endfor %}
+  </nav>
+</header>
+
+<div class="overlay overlay-menu" id="menu" aria-hidden="true">
+  <button class="overlay-close" type="button" data-close aria-label="Chiudi">✕</button>
+  <nav class="menu-list">
+    {% for item in site.data.navigation %}
+      <a href="{{ item.url | relative_url }}" style="--i:{{ forloop.index0 }}">{{ item.title }}</a>
+    {% endfor %}
+    <a href="{{ '/admin/' | relative_url }}" style="--i:{{ site.data.navigation.size }}" class="menu-login">Accedi →</a>
+  </nav>
+</div>
+
+<div class="overlay overlay-search" id="search" aria-hidden="true">
+  <button class="overlay-close" type="button" data-close aria-label="Chiudi">✕</button>
+  <div class="search-box">
+    <input id="search-input" type="search" placeholder="Cerca articoli, news, progetti…" autocomplete="off">
+    <ul id="search-results" class="search-results"></ul>
+  </div>
+</div>

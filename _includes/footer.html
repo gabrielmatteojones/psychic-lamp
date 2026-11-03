@@ -1,0 +1,24 @@
+{% assign f = site.data.site.footer %}
+<div class="checker" aria-hidden="true"></div>
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <a class="logo logo-light" href="{{ '/' | relative_url }}">Gabriel Jones</a>
+      <p class="small">{{ f.tagline }}<br>{{ f.vat }}</p>
+    </div>
+    <div>
+      <h4>Pagine</h4>
+      {% for l in f.pages %}<a href="{{ l.url | relative_url }}">{{ l.title }}</a>{% endfor %}
+    </div>
+    <div>
+      <h4>Legale</h4>
+      {% for l in f.legal %}<a href="{{ l.url | relative_url }}">{{ l.title }}</a>{% endfor %}
+    </div>
+    <div>
+      <h4>Account</h4>
+      <a href="{{ '/admin/' | relative_url }}">Accedi</a>
+    </div>
+  </div>
+  <div class="wrap copy">© {{ 'now' | date: '%Y' }} Gabriel Jones · Tutti i diritti riservati</div>
+</footer>
+<button class="to-top" type="button" aria-label="Torna su" data-top>↑</button>

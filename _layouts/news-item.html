@@ -1,0 +1,13 @@
+---
+layout: default
+---
+<article class="article">
+  <header class="page-head">
+    <div class="wrap narrow">
+      <p class="eyebrow"><span class="chip on">News</span> {{ page.date | date: "%d/%m/%Y" }}</p>
+      <h1 class="big reveal">{{ page.title }}</h1>
+    </div>
+  </header>
+  <div class="wrap narrow prose reveal">{{ content }}</div>
+  <div class="wrap narrow"><a class="btn btn-dark" href="{{ '/news/' | relative_url }}">← Tutte le news</a></div>
+</article>

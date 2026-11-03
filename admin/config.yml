@@ -1,0 +1,158 @@
+backend:
+  name: git-gateway
+  branch: main          # cambia se il tuo ramo principale ha un altro nome
+
+local_backend: true     # per lavorare in locale: npx decap-server
+
+media_folder: assets/uploads
+public_folder: /assets/uploads
+locale: it
+site_url: /
+display_url: /
+
+collections:
+  - name: blog
+    label: Blog
+    label_singular: Articolo
+    folder: _posts
+    create: true
+    extension: md
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: "{{title}} · {{section}}"
+    sortable_fields: [date, title]
+    fields:
+      - { label: Titolo, name: title, widget: string }
+      - { label: Data, name: date, widget: datetime, format: "YYYY-MM-DD HH:mm:ss ZZ", date_format: "DD/MM/YYYY", time_format: "HH:mm" }
+      - label: Sezione
+        name: section
+        widget: select
+        options: [Personale, Recensioni, Educazione]
+        default: Personale
+      - { label: Sommario, name: summary, widget: text, required: false }
+      - { label: Testo, name: body, widget: markdown }
+
+  - name: news
+    label: News
+    label_singular: News
+    folder: _news
+    create: true
+    extension: md
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: Titolo, name: title, widget: string }
+      - { label: Data, name: date, widget: datetime, format: "YYYY-MM-DD HH:mm:ss ZZ", date_format: "DD/MM/YYYY", time_format: "HH:mm" }
+      - { label: Sommario, name: summary, widget: text, required: false }
+      - { label: Testo, name: body, widget: markdown }
+
+  - name: portfolio
+    label: Portfolio
+    label_singular: Progetto
+    folder: _portfolio
+    create: true
+    extension: md
+    slug: "{{slug}}"
+    fields:
+      - { label: Titolo, name: title, widget: string }
+      - label: Area
+        name: area
+        widget: select
+        options: [Sviluppo web, Grafica, Educazione]
+      - { label: Descrizione breve, name: description, widget: text }
+      - { label: Immagine, name: image, widget: image, required: false }
+      - { label: Link al progetto, name: link, widget: string, required: false }
+      - { label: Dettagli, name: body, widget: markdown, required: false }
+
+  - name: impostazioni
+    label: Impostazioni
+    files:
+      - name: site
+        label: Home e Playbook
+        file: _data/site.yml
+        fields:
+          - label: Hero
+            name: hero
+            widget: object
+            fields:
+              - { label: Introduzione ("mi chiamo"), name: intro, widget: string }
+              - { label: Nome, name: name, widget: string }
+              - { label: Slogan, name: tagline, widget: string }
+              - { label: Bottone 1, name: cta_primary, widget: string }
+              - { label: Bottone 2, name: cta_secondary, widget: string }
+          - { label: Testo nell'ovale, name: intro_text, widget: text }
+          - label: Aree colorate
+            name: areas
+            widget: list
+            fields:
+              - { label: Titolo, name: title, widget: string }
+              - { label: Colore, name: color, widget: select, options: [pink, green, blue] }
+              - { label: Link, name: url, widget: string }
+          - label: Playbook
+            name: playbook
+            widget: object
+            fields:
+              - { label: Etichetta, name: label, widget: string }
+              - { label: Titolo, name: title, widget: string }
+              - { label: Testo breve (home), name: short, widget: text }
+              - { label: Testo lungo (pagina Playbook), name: long, widget: text }
+              - { label: Testo bottone, name: button, widget: string }
+              - { label: Link al sito Playbook, name: url, widget: string }
+              - label: Numeri
+                name: stats
+                widget: list
+                fields:
+                  - { label: Valore, name: value, widget: string }
+                  - { label: Etichetta breve, name: label, widget: string }
+                  - { label: Etichetta lunga, name: long, widget: string }
+              - { label: Titolo "Come funziona", name: steps_title, widget: string }
+              - label: Passaggi
+                name: steps
+                widget: list
+                fields:
+                  - { label: Titolo, name: title, widget: string }
+                  - { label: Testo, name: text, widget: text }
+              - { label: Frase sotto le news, name: news_tagline, widget: string }
+          - label: In evidenza (carosello)
+            name: featured
+            widget: list
+            fields:
+              - { label: Emoji, name: icon, widget: string }
+              - { label: Titolo, name: title, widget: string }
+              - { label: Testo link, name: link, widget: string }
+              - { label: URL, name: url, widget: string }
+              - { label: Colore, name: color, widget: select, options: [wine, green, blue, yellow, pink, red] }
+              - { label: Testo scuro, name: dark, widget: boolean, default: false }
+          - { label: Frase grande, name: quote, widget: string }
+          - { label: Parole del ticker, name: ticker, widget: list, field: { label: Parola, name: parola, widget: string } }
+          - label: Footer
+            name: footer
+            widget: object
+            fields:
+              - { label: Descrizione, name: tagline, widget: string }
+              - { label: "P.IVA / Codice fiscale", name: vat, widget: string }
+              - label: Pagine
+                name: pages
+                widget: list
+                fields: [{ label: Titolo, name: title, widget: string }, { label: URL, name: url, widget: string }]
+              - label: Legale
+                name: legal
+                widget: list
+                fields: [{ label: Titolo, name: title, widget: string }, { label: URL, name: url, widget: string }]
+      - name: documenti
+        label: Documenti
+        file: _data/documenti.yml
+        fields:
+          - label: Documenti
+            name: items
+            widget: list
+            fields:
+              - { label: Titolo, name: title, widget: string }
+              - { label: Descrizione, name: description, widget: string, required: false }
+              - { label: File, name: file, widget: file, required: false }
+
+  - name: pagine
+    label: Pagine legali
+    files:
+      - { name: privacy, label: Privacy policy, file: privacy/index.md, fields: [{ label: Titolo, name: title, widget: string }, { label: Layout, name: layout, widget: hidden, default: page }, { label: Testo, name: body, widget: markdown }] }
+      - { name: cookie, label: Cookie policy, file: cookie/index.md, fields: [{ label: Titolo, name: title, widget: string }, { label: Layout, name: layout, widget: hidden, default: page }, { label: Testo, name: body, widget: markdown }] }
+      - { name: termini, label: Termini d'uso, file: termini/index.md, fields: [{ label: Titolo, name: title, widget: string }, { label: Layout, name: layout, widget: hidden, default: page }, { label: Testo, name: body, widget: markdown }] }
+      - { name: note-legali, label: Note legali, file: note-legali/index.md, fields: [{ label: Titolo, name: title, widget: string }, { label: Layout, name: layout, widget: hidden, default: page }, { label: Testo, name: body, widget: markdown }] }

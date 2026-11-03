@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="it" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title and page.url != '/' %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ page.summary | default: page.description | default: site.description | strip_html | escape }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;800;900&family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,400&family=Patrick+Hand&family=Hanken+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  <script>document.documentElement.className='js';</script>
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body class="{{ page.body_class }}">
+  {% include header.html %}
+  <main>{{ content }}</main>
+  {% include footer.html %}
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", function (u) {
+        if (!u) window.netlifyIdentity.on("login", function () { document.location.href = "{{ '/admin/' | relative_url }}"; });
+      });
+    }
+  </script>
+  <script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
+</body>
+</html>

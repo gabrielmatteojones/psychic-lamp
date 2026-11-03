@@ -1,0 +1,13 @@
+---
+layout: page
+permalink: /documenti/
+title: Documenti
+lead: Materiali da scaricare.
+---
+<ul class="rows">
+  {% for d in site.data.documenti.items %}
+    <li class="reveal"><a {% if d.file and d.file != "" %}href="{{ d.file | relative_url }}" download{% else %}href="#" aria-disabled="true"{% endif %}>
+      <time>PDF</time><span class="rt">{{ d.title }} <em>· {{ d.description }}</em></span><span class="arr">↓</span>
+    </a></li>
+  {% endfor %}
+</ul>

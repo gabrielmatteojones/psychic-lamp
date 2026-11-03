@@ -1,0 +1,22 @@
+---
+layout: page
+permalink: /blog/
+title: Blog
+lead: Film, libri, pop, recensioni ed educazione.
+---
+<div class="chips" data-filter-group>
+  <button class="chip on" data-filter="all">Tutti</button>
+  <button class="chip" data-filter="personale">Personale</button>
+  <button class="chip" data-filter="recensioni">Recensioni</button>
+  <button class="chip" data-filter="educazione">Educazione</button>
+</div>
+<ul class="rows" data-filter-items>
+  {% for p in site.posts %}
+    <li class="reveal" data-cat="{{ p.section | default: 'Personale' | downcase }}"><a href="{{ p.url | relative_url }}">
+      <time>{{ p.date | date: "%d/%m/%Y" }}</time>
+      <span class="rt">{{ p.title }} <em>· {{ p.section | default: 'Personale' }}</em></span>
+      <span class="arr">→</span>
+    </a></li>
+  {% endfor %}
+</ul>
+<p class="empty" hidden>Nessun articolo in questa sezione, per ora.</p>

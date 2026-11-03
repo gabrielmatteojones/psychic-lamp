@@ -1,0 +1,15 @@
+---
+layout: page
+permalink: /contatti/
+title: Contatti
+lead: Scrivimi, rispondo volentieri.
+---
+<form class="form reveal" name="contatti" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="{{ '/contatti/?ok=1' | relative_url }}">
+  <input type="hidden" name="form-name" value="contatti">
+  <p hidden><label>Non compilare: <input name="bot-field"></label></p>
+  <p class="ok" hidden>Messaggio inviato, grazie! ✔</p>
+  <label>Nome<input name="nome" required></label>
+  <label>Email<input type="email" name="email" required></label>
+  <label>Messaggio<textarea name="messaggio" rows="6" required></textarea></label>
+  <button class="btn btn-dark" type="submit">Invia</button>
+</form>

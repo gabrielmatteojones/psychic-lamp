@@ -1,0 +1,53 @@
+---
+layout: default
+permalink: /playbook/
+title: Playbook
+body_class: page-playbook
+---
+{% assign p = site.data.site.playbook %}
+<section class="pb-hero">
+  <p class="eyebrow-light pop">↖ {{ p.label | upcase }}</p>
+  <h1 class="serif-title pop">{{ p.title }}</h1>
+  <p class="pb-lead pop">{{ p.long }}</p>
+  <a class="btn btn-yellow pop" href="{{ p.url }}" target="_blank" rel="noopener">{{ p.button }}</a>
+  <p class="byline pop">Gabriel Jones | {{ 'now' | date: '%Y' }}</p>
+</section>
+<div class="scallop" aria-hidden="true"></div>
+
+<section class="wrap">
+  <div class="stats-card reveal">
+    {% for st in p.stats %}
+      <div><strong data-count="{{ st.value }}">{{ st.value }}</strong><span>{{ st.long }}</span></div>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="steps">
+  <div class="wrap">
+    <h2 class="big reveal">{{ p.steps_title }}</h2>
+    <div class="steps-grid">
+      {% for s in p.steps %}
+        <div class="step reveal tilt" style="--d:{{ forloop.index0 }}">
+          <b>{{ forloop.index }}</b>
+          <h3>{{ s.title }}</h3>
+          <p>{{ s.text }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<div class="checker checker-flip" aria-hidden="true"></div>
+
+<section class="pb-news">
+  <p class="pb-news-tag">{{ p.news_tagline }}</p>
+  <p class="byline">Gabriel Jones | {{ 'now' | date: '%Y' }}</p>
+</section>
+<div class="scallop" aria-hidden="true"></div>
+<section class="wrap news-strip">
+  {% assign news = site.news | sort: "date" | reverse %}
+  {% for n in news limit:3 %}
+    <a class="news-row reveal" href="{{ n.url | relative_url }}">
+      <time>{{ n.date | date: "%d/%m/%Y" }}</time><span>{{ n.title }}</span><i>→</i>
+    </a>
+  {% endfor %}
+</section>

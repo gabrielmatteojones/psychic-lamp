@@ -1,0 +1,26 @@
+title: Gabriel Jones
+description: Costruisco siti, disegno idee, insegno a giocare.
+lang: it
+url: "gabrieljones.github.io"
+baseurl: "/psychic-lamp/"
+permalink: /blog/:year/:month/:day/:title/
+timezone: Europe/Rome
+markdown: kramdown
+
+collections:
+  news:
+    output: true
+    permalink: /news/:year/:month/:day/:title/
+  portfolio:
+    output: true
+    permalink: /portfolio/:title/
+
+defaults:
+  - scope: { path: "", type: "posts" }
+    values: { layout: post }
+  - scope: { path: "", type: "news" }
+    values: { layout: news-item }
+  - scope: { path: "", type: "portfolio" }
+    values: { layout: portfolio-item }
+
+exclude: [Gemfile, Gemfile.lock, README.md, netlify.toml, node_modules, vendor]

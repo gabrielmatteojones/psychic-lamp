@@ -1,0 +1,87 @@
+---
+layout: default
+title: Home
+---
+{% assign s = site.data.site %}
+<section class="hero">
+  <p class="hand pop">{{ s.hero.intro }}</p>
+  <h1 class="stamp" id="stamp"><span>{{ s.hero.name | upcase }}</span></h1>
+  <p class="tagline reveal">{{ s.hero.tagline }}</p>
+  <div class="cta reveal">
+    <a class="btn btn-dark" href="{{ '/contatti/' | relative_url }}">{{ s.hero.cta_primary }}</a>
+    <a class="btn btn-yellow" href="{{ '/playbook/' | relative_url }}">{{ s.hero.cta_secondary }}</a>
+  </div>
+</section>
+
+<div class="checker" aria-hidden="true"></div>
+<section class="lime">
+  <svg class="waves" viewBox="0 0 1350 400" preserveAspectRatio="none" aria-hidden="true">
+    <path class="w w-blue" d="M0 330 C 150 330, 200 100, 380 120 S 700 360, 850 230 S 1150 60, 1350 250"/>
+    <path class="w w-red"  d="M0 300 C 150 300, 200 70, 380 90 S 700 330, 850 200 S 1150 30, 1350 220"/>
+  </svg>
+  <div class="oval float"><p>{{ s.intro_text }}</p></div>
+</section>
+
+<section class="areas">
+  {% for a in s.areas %}
+    <a class="area area-{{ a.color }}" href="{{ a.url | relative_url }}"><span>{{ a.title }}</span></a>
+  {% endfor %}
+</section>
+
+<section class="wrap promo">
+  <a class="promo-card tilt" href="{{ '/playbook/' | relative_url }}"><span>Playbook</span></a>
+  <div class="promo-text">
+    <h2 class="big reveal">{{ s.playbook.title }}</h2>
+    <p class="reveal">{{ s.playbook.short }}</p>
+    <div class="stats-inline">
+      {% for st in s.playbook.stats %}
+        <div class="reveal" style="--d:{{ forloop.index0 }}"><strong data-count="{{ st.value }}">{{ st.value }}</strong><span>{{ st.label }}</span></div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="mint">
+  <div class="wrap">
+    <div class="row-head">
+      <h2 class="big reveal">In evidenza</h2>
+      <div class="arrows"><button type="button" data-prev aria-label="Indietro">←</button><button type="button" data-next aria-label="Avanti">→</button></div>
+    </div>
+    <div class="carousel" id="carousel">
+      {% for f in s.featured %}
+        <a class="fcard fc-{{ f.color }}{% if f.dark %} dark-text{% endif %}" href="{{ f.url | relative_url }}">
+          <span class="ficon">{{ f.icon }}</span>
+          <span class="ftitle">{{ f.title }}</span>
+          <span class="flink">{{ f.link }}</span>
+        </a>
+      {% endfor %}
+    </div>
+    <div class="progress"><i id="progress"></i></div>
+  </div>
+</section>
+
+<section class="mint quote-sec">
+  <p class="quote" id="quote" data-words>{{ s.quote }}</p>
+</section>
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    {% for i in (1..4) %}{% for t in s.ticker %}<span>{{ t }}</span><b>✺</b>{% endfor %}{% endfor %}
+  </div>
+</div>
+
+<section class="wrap latest">
+  <div class="row-head">
+    <h2 class="big reveal">Ultimi dal blog</h2>
+    <a class="btn btn-dark" href="{{ '/blog/' | relative_url }}">Tutti gli articoli</a>
+  </div>
+  <ul class="rows">
+    {% for p in site.posts limit:5 %}
+      <li class="reveal"><a href="{{ p.url | relative_url }}">
+        <time>{{ p.date | date: "%d/%m/%Y" }}</time>
+        <span class="rt">{{ p.title }}{% if p.section %} <em>· {{ p.section }}</em>{% endif %}</span>
+        <span class="arr">→</span>
+      </a></li>
+    {% endfor %}
+  </ul>
+</section>

@@ -1,0 +1,24 @@
+---
+layout: page
+permalink: /portfolio/
+title: Portfolio
+lead: Siti, grafica e progetti educativi.
+---
+<div class="chips" data-filter-group>
+  <button class="chip on" data-filter="all">Tutti</button>
+  <button class="chip" data-filter="sviluppo-web">Sviluppo web</button>
+  <button class="chip" data-filter="grafica">Grafica</button>
+  <button class="chip" data-filter="educazione">Educazione</button>
+</div>
+<div class="grid" data-filter-items>
+  {% for p in site.portfolio %}
+    {% assign slug = p.area | slugify %}
+    <a class="pcard reveal tilt pc-{{ slug }}" data-cat="{{ slug }}" href="{{ p.url | relative_url }}">
+      {% if p.image %}<img src="{{ p.image | relative_url }}" alt="" loading="lazy">{% endif %}
+      <span class="chip on">{{ p.area }}</span>
+      <h3>{{ p.title }}</h3>
+      <p>{{ p.description }}</p>
+    </a>
+  {% endfor %}
+</div>
+<p class="empty" hidden>Nessun progetto in questa categoria, per ora.</p>

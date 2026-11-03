@@ -1,0 +1,7 @@
+- { title: Home, url: / }
+- { title: Playbook, url: /playbook/ }
+- { title: Portfolio, url: /portfolio/ }
+- { title: Blog, url: /blog/ }
+- { title: News, url: /news/ }
+- { title: Documenti, url: /documenti/ }
+- { title: Contatti, url: /contatti/ }

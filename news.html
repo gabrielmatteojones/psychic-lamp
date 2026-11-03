@@ -1,0 +1,14 @@
+---
+layout: page
+permalink: /news/
+title: News
+lead: Novità dal lavoro e dalla ricerca.
+---
+<ul class="rows">
+  {% assign news = site.news | sort: "date" | reverse %}
+  {% for n in news %}
+    <li class="reveal"><a href="{{ n.url | relative_url }}">
+      <time>{{ n.date | date: "%d/%m/%Y" }}</time><span class="rt">{{ n.title }}</span><span class="arr">→</span>
+    </a></li>
+  {% endfor %}
+</ul>

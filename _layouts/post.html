@@ -1,0 +1,15 @@
+---
+layout: default
+---
+{% assign sec = page.section | default: 'Personale' %}
+<article class="article sec-{{ sec | downcase }}">
+  <header class="page-head">
+    <div class="wrap narrow">
+      <p class="eyebrow"><span class="chip on">{{ sec }}</span> {{ page.date | date: "%d/%m/%Y" }}</p>
+      <h1 class="big reveal">{{ page.title }}</h1>
+      {% if page.summary %}<p class="lead reveal">{{ page.summary }}</p>{% endif %}
+    </div>
+  </header>
+  <div class="wrap narrow prose reveal">{{ content }}</div>
+  <div class="wrap narrow"><a class="btn btn-dark" href="{{ '/blog/' | relative_url }}">← Tutti gli articoli</a></div>
+</article>
