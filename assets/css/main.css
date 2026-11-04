@@ -28,7 +28,7 @@ img{max-width:100%}
 .site-header{position:sticky;top:0;z-index:50;background:var(--bg);transition:transform .35s ease}
 .site-header.hide{transform:translateY(-100%)}
 .bar{width:min(1240px,100% - 48px);margin:auto;display:flex;align-items:center;justify-content:space-between;padding:14px 0;border-bottom:1px solid #eadfd6}
-.logo{font:700 1.7rem var(--serif);text-decoration:none;color:var(--ink)}
+.logo{font:900 1.7rem var(--head);letter-spacing:-.02em;text-decoration:none;color:var(--ink)}
 .logo-light{color:#fff}
 .menu-btn,.search-btn{background:none;border:0;font:800 .75rem var(--body);letter-spacing:.14em;text-transform:uppercase;display:flex;gap:12px;align-items:center;cursor:pointer;color:var(--ink);width:140px}
 .search-btn{justify-content:flex-end}
@@ -155,6 +155,8 @@ img{max-width:100%}
 .rows a:hover{background:var(--yellow);padding-left:22px}
 .rows time{font:800 .85rem var(--head);color:var(--red)}
 .rt{font:900 clamp(1.3rem,3vw,1.9rem) var(--head)}
+.rt-title{color:var(--ink);opacity:1}
+.latest .rt{display:block;min-width:0;color:var(--ink)}
 .rt em{font:400 1.2rem var(--body);font-style:normal;opacity:.65}
 .arr{transition:transform .25s}
 .rows a:hover .arr{transform:translateX(8px)}

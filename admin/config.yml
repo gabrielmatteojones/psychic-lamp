@@ -128,7 +128,6 @@ collections:
             widget: object
             fields:
               - { label: Descrizione, name: tagline, widget: string }
-              - { label: "P.IVA / Codice fiscale", name: vat, widget: string }
               - label: Pagine
                 name: pages
                 widget: list

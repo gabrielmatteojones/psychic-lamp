@@ -4,7 +4,7 @@ title: Home
 ---
 {% assign s = site.data.site %}
 <section class="hero">
-  <p>Mia mamma mi ha chiamato</p>
+  <p class="hand pop">{{ s.hero.intro }}</p>
   <h1 class="stamp" id="stamp"><span>{{ s.hero.name | upcase }}</span></h1>
   <p class="tagline reveal">{{ s.hero.tagline }}</p>
   <div class="cta reveal">
@@ -50,6 +50,7 @@ title: Home
     <div class="carousel" id="carousel">
       {% for f in s.featured %}
         <a class="fcard fc-{{ f.color }}{% if f.dark %} dark-text{% endif %}" href="{{ f.url | relative_url }}">
+          <span class="ficon">{{ f.icon }}</span>
           <span class="ftitle">{{ f.title }}</span>
           <span class="flink">{{ f.link }}</span>
         </a>
@@ -63,6 +64,12 @@ title: Home
   <p class="quote" id="quote" data-words>{{ s.quote }}</p>
 </section>
 
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    {% for i in (1..4) %}{% for t in s.ticker %}<span>{{ t }}</span><b>✺</b>{% endfor %}{% endfor %}
+  </div>
+</div>
+
 <section class="wrap latest">
   <div class="row-head">
     <h2 class="big reveal">Ultimi dal blog</h2>
@@ -72,7 +79,7 @@ title: Home
     {% for p in site.posts limit:5 %}
       <li class="reveal"><a href="{{ p.url | relative_url }}">
         <time>{{ p.date | date: "%d/%m/%Y" }}</time>
-        <span class="rt">{{ p.title }}{% if p.section %} <em>· {{ p.section }}</em>{% endif %}</span>
+        <span class="rt"><span class="rt-title">{{ p.title | escape }}</span>{% if p.section %} <em>· {{ p.section }}</em>{% endif %}</span>
         <span class="arr">→</span>
       </a></li>
     {% endfor %}
