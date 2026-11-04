@@ -14,7 +14,7 @@ lead: Film, libri, pop, recensioni ed educazione.
   {% for p in site.posts %}
     <li class="reveal" data-cat="{{ p.section | default: 'Personale' | downcase }}"><a href="{{ p.url | relative_url }}">
       <time>{{ p.date | date: "%d/%m/%Y" }}</time>
-      <span class="rt">{{ p.title }} <em>· {{ p.section | default: 'Personale' }}</em></span>
+      <span class="rt"><span class="rt-title">{{ p.title | default: p.slug | replace: "-", " " | capitalize }}</span> <em>· {{ p.section | default: 'Personale' }}</em></span>
       <span class="arr">→</span>
     </a></li>
   {% endfor %}

@@ -3,13 +3,28 @@ layout: default
 title: Home
 ---
 {% assign s = site.data.site %}
-<section class="hero">
-  <p class="hand pop">{{ s.hero.intro }}</p>
-  <h1 class="stamp" id="stamp"><span>{{ s.hero.name | upcase }}</span></h1>
-  <p class="tagline reveal">{{ s.hero.tagline }}</p>
-  <div class="cta reveal">
-    <a class="btn btn-dark" href="{{ '/contatti/' | relative_url }}">{{ s.hero.cta_primary }}</a>
-    <a class="btn btn-yellow" href="{{ '/playbook/' | relative_url }}">{{ s.hero.cta_secondary }}</a>
+<section class="hero notes{% if s.hero.photo != blank %} has-photo{% endif %}">
+  <div class="wrap hero-inner">
+    <div class="hero-text">
+      <p class="hand pop">{{ s.hero.intro }}</p>
+      <h1 class="stamp" id="stamp"><span>{{ s.hero.name }}</span><svg class="scribble" viewBox="0 0 400 24" preserveAspectRatio="none" aria-hidden="true"><path d="M4 15 C 70 2, 120 22, 190 10 S 300 3, 396 13"/></svg></h1>
+      <p class="tagline reveal">{{ s.hero.tagline }}</p>
+      <div class="cta reveal">
+        <a class="btn btn-dark" href="{{ '/contatti/' | relative_url }}">{{ s.hero.cta_primary }}</a>
+        <a class="btn btn-yellow" href="{{ '/playbook/' | relative_url }}">{{ s.hero.cta_secondary }}</a>
+      </div>
+    </div>
+    {% if s.hero.photo != blank %}
+    <figure class="polaroid pop">
+      <img src="{{ s.hero.photo | relative_url }}" alt="{{ s.hero.name }}">
+      {% if s.hero.photo_caption != blank %}<figcaption>{{ s.hero.photo_caption }}</figcaption>{% endif %}
+    </figure>
+    {% endif %}
+    {% for n in s.hero.notes limit:2 %}
+      <aside class="sticky sticky-{{ forloop.index }}" aria-hidden="true">{{ n }}</aside>
+    {% endfor %}
+    <span class="doodle doodle-star" aria-hidden="true">✺</span>
+    <svg class="doodle doodle-arrow" viewBox="0 0 120 80" aria-hidden="true"><path d="M6 10 C 40 0, 90 20, 100 62 M100 62 l-14 -14 M100 62 l 16 -10"/></svg>
   </div>
 </section>
 
@@ -79,7 +94,7 @@ title: Home
     {% for p in site.posts limit:5 %}
       <li class="reveal"><a href="{{ p.url | relative_url }}">
         <time>{{ p.date | date: "%d/%m/%Y" }}</time>
-        <span class="rt"><span class="rt-title">{{ p.title | escape }}</span>{% if p.section %} <em>· {{ p.section }}</em>{% endif %}</span>
+        <span class="rt"><span class="rt-title">{{ p.title | default: p.slug | replace: "-", " " | capitalize }}</span>{% if p.section %} <em>· {{ p.section }}</em>{% endif %}</span>
         <span class="arr">→</span>
       </a></li>
     {% endfor %}

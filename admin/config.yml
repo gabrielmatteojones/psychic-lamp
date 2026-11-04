@@ -78,6 +78,9 @@ collections:
               - { label: Slogan, name: tagline, widget: string }
               - { label: Bottone 1, name: cta_primary, widget: string }
               - { label: Bottone 2, name: cta_secondary, widget: string }
+              - { label: Foto (opzionale), name: photo, widget: image, required: false }
+              - { label: Didascalia foto, name: photo_caption, widget: string, required: false }
+              - { label: Bigliettini adesivi, name: notes, widget: list, required: false, field: { label: Testo, name: nota, widget: string } }
           - { label: Testo nell'ovale, name: intro_text, widget: text }
           - label: Aree colorate
             name: areas

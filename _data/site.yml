@@ -4,6 +4,11 @@ hero:
   tagline: Costruisco siti, disegno idee, insegno a giocare.
   cta_primary: Scrivimi
   cta_secondary: Scopri Playbook
+  photo: ""            # es. /assets/uploads/gabriel.jpg (carica la foto da /admin)
+  photo_caption: "io, in azione"
+  notes:
+    - "siti web ✎"
+    - "oltre 200 giochi per educatori!"
 
 intro_text: "Un sito personale, una raccolta di oltre duecento giochi per educatori e un’idea fissa: imparare funziona meglio quando è ben giocato."
 
