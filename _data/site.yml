@@ -4,56 +4,97 @@ hero:
   tagline: Costruisco siti, disegno idee, insegno a giocare.
   cta_primary: Scrivimi
   cta_secondary: Scopri Playbook
-  photo: ""            # es. /assets/uploads/gabriel.jpg (carica la foto da /admin)
-  photo_caption: "io, in azione"
+  photo: ""
+  photo_caption: io, in azione
   notes:
-    - "siti web ✎"
-    - "oltre 200 giochi per educatori!"
-
-intro_text: "Un sito personale, una raccolta di oltre duecento giochi per educatori e un’idea fissa: imparare funziona meglio quando è ben giocato."
-
+    - Mi piace vedere e prender spunto
+    - Mi piace disegnare creare e costruire!
+intro_text: "Un sito personale, una raccolta di oltre duecento giochi per
+  educatori e un’idea fissa: imparare funziona meglio quando è ben giocato."
 areas:
-  - { title: Sviluppo web, color: pink, url: "/portfolio/#sviluppo-web" }
-  - { title: Grafica, color: green, url: "/portfolio/#grafica" }
-  - { title: Educazione, color: blue, url: "/blog/#educazione" }
-
+  - title: Sviluppo web
+    color: pink
+    url: /portfolio/#sviluppo-web
+  - title: Grafica
+    color: green
+    url: /portfolio/#grafica
+  - title: Educazione
+    color: blue
+    url: /blog/#educazione
 playbook:
-  label: Progetto risorse
-  title: Oggi giochiamo!
-  short: "Schede gioco per educatori, animatori e catechisti: regole chiare, materiali, tempi e consigli pratici."
-  long: "288 schede gioco per educatori, animatori e catechisti: regole chiare, materiali, tempi e consigli pratici, da usare in oratorio, a scuola e al Grest."
-  button: Vai al sito Playbook
-  url: "https://example.com"
-  stats:
-    - { value: "288", label: schede gioco, long: schede gioco }
-    - { value: "7", label: libri tematici, long: "libri tematici, dal chiuso all’aperto, dal Grest agli animatori" }
-    - { value: "4–18", label: anni, long: "anni, dai più piccoli agli animatori" }
   steps_title: Come funziona
-  steps:
-    - { title: Accedi, text: "L’area riservata è per gli educatori autorizzati: accedi con la tua email." }
-    - { title: Scegli il gioco, text: "Cerca per nome, libro, categoria o codice e apri la scheda." }
-    - { title: Tieni il registro, text: "Segna le attività sul calendario e annota com’è andata." }
   news_tagline: Novità dal lavoro e dalla ricerca.
-
+  steps:
+    - title: Accedi
+      text: "L’area riservata è per gli educatori autorizzati: accedi con la tua
+        email."
+    - title: Scegli il gioco
+      text: Cerca per nome, libro, categoria o codice e apri la scheda.
+    - title: Tieni il registro
+      text: Segna le attività sul calendario e annota com’è andata.
+  url: https://progettoplaybook.it
+  button: Vai al sito Playbook
+  label: Progetto PlayBook
+  title: Oggi giochiamo!
+  short: "Schede gioco per educatori, animatori e catechisti: regole chiare,
+    materiali, tempi e consigli pratici."
+  long: "288 schede gioco per educatori, animatori e catechisti: regole chiare,
+    materiali, tempi e consigli pratici, da usare in oratorio, a scuola e al
+    Grest."
+  stats:
+    - value: "288"
+      label: schede gioco
+      long: schede gioco
+    - value: "7"
+      label: libri tematici
+      long: libri tematici, dal chiuso all’aperto, dal Grest agli animatori
+    - value: 4–18
+      label: anni
+      long: anni, dai più piccoli agli animatori
 featured:
-  - { icon: "🎲", title: Playbook, link: Scopri, url: /playbook/, color: wine, dark: false }
-  - { icon: "🎨", title: Portfolio, link: Sfoglia, url: /portfolio/, color: green, dark: false }
-  - { icon: "🎬", title: Blog, link: "Film, libri, pop", url: /blog/, color: blue, dark: true }
-  - { icon: "📣", title: News, link: Segui, url: /news/, color: yellow, dark: true }
-
-quote: "Imparare funziona meglio quando sembra un gioco ben fatto."
-
-ticker: [Sviluppo web, Grafica, Educazione, Playbook, Giochi, Idee]
-
+  - icon: 🎲
+    title: Playbook
+    link: Scopri
+    url: /playbook/
+    color: wine
+    dark: false
+  - icon: 🎨
+    title: Portfolio
+    link: Sfoglia
+    url: /portfolio/
+    color: green
+    dark: false
+  - icon: 🎬
+    title: Blog
+    link: Film, libri, pop
+    url: /blog/
+    color: blue
+    dark: true
+  - icon: 📣
+    title: News
+    link: Segui
+    url: /news/
+    color: yellow
+    dark: true
+quote: Imparare funziona meglio quando sembra un gioco ben fatto.
+ticker: []
 footer:
-  tagline: "Creatore di Playbook."
+  tagline: Mi piace fare tante cose!
   pages:
-    - { title: Portfolio, url: /portfolio/ }
-    - { title: Blog, url: /blog/ }
-    - { title: News, url: /news/ }
-    - { title: Playbook, url: /playbook/ }
+    - title: Portfolio
+      url: /portfolio/
+    - title: Blog
+      url: /blog/
+    - title: News
+      url: /news/
+    - title: Playbook
+      url: /playbook/
   legal:
-    - { title: Privacy policy, url: /privacy/ }
-    - { title: Cookie policy, url: /cookie/ }
-    - { title: Termini d’uso, url: /termini/ }
-    - { title: Note legali, url: /note-legali/ }
+    - title: Privacy policy
+      url: /privacy/
+    - title: Cookie policy
+      url: /cookie/
+    - title: Termini d’uso
+      url: /termini/
+    - title: Note legali
+      url: /note-legali/
