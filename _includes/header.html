@@ -24,7 +24,8 @@
     {% for item in site.data.navigation %}
       <a href="{{ item.url | relative_url }}" style="--i:{{ forloop.index0 }}">{{ item.title }}</a>
     {% endfor %}
-    <a href="{{ '/admin/' | relative_url }}" style="--i:{{ site.data.navigation.size }}" class="menu-login">Accedi →</a>
+    <a href="{{ '/drive/' | relative_url }}" style="--i:{{ site.data.navigation.size }}" class="menu-login">Drive →</a>
+    <a href="{{ '/admin/' | relative_url }}" style="--i:{{ site.data.navigation.size | plus: 1 }}" class="menu-login">Accedi (CMS) →</a>
   </nav>
 </div>
 

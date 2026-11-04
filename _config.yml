@@ -23,4 +23,4 @@ defaults:
   - scope: { path: "", type: "portfolio" }
     values: { layout: portfolio-item }
 
-exclude: [Gemfile, Gemfile.lock, README.md, netlify.toml, node_modules, vendor]
+exclude: [Gemfile, Gemfile.lock, README.md, netlify.toml, netlify, package.json, package-lock.json, node_modules, vendor]

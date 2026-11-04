@@ -65,6 +65,7 @@ title: Home
     <div class="carousel" id="carousel">
       {% for f in s.featured %}
         <a class="fcard fc-{{ f.color }}{% if f.dark %} dark-text{% endif %}" href="{{ f.url | relative_url }}">
+          <span class="ficon">{{ f.icon }}</span>
           <span class="ftitle">{{ f.title }}</span>
           <span class="flink">{{ f.link }}</span>
         </a>

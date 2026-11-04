@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% if page.noindex %}<meta name="robots" content="noindex, nofollow">{% endif %}
   <title>{% if page.title and page.url != '/' %}{{ page.title }} · {% endif %}{{ site.title }}</title>
   <meta name="description" content="{{ page.summary | default: page.description | default: site.description | strip_html | escape }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,7 +20,7 @@
   <script>
     if (window.netlifyIdentity) {
       window.netlifyIdentity.on("init", function (u) {
-        if (!u) window.netlifyIdentity.on("login", function () { document.location.href = "{{ '/admin/' | relative_url }}"; });
+        if (!u && !document.body.classList.contains("drive")) window.netlifyIdentity.on("login", function () { document.location.href = "{{ '/admin/' | relative_url }}"; });
       });
     }
   </script>

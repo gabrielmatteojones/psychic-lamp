@@ -1,0 +1,8 @@
+{
+  "name": "gabriel-jones-site",
+  "private": true,
+  "description": "Funzioni Netlify per l'area Drive",
+  "dependencies": {
+    "@netlify/blobs": "^8.1.0"
+  }
+}
