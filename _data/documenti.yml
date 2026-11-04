@@ -1,4 +1,8 @@
 items:
-  - title: Esempio di documento
-    description: Sostituiscimi dal pannello /admin/ con un PDF vero.
-    file: ""
+  - title: Statuto
+    file: /docs/statuto.pdf
+  - title: Policy sui resi
+    description: Politica sui resi dagli acquisti nei siti appartenenti alla rete 18F
+    file: /docs/policy_sui_resi.pdf
+  - title: Policy sulla sicurezza
+    file: /docs/sicurezza.pdf
