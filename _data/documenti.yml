@@ -3,6 +3,6 @@ items:
     file: /docs/statuto.pdf
   - title: Policy sui resi
     description: Politica sui resi dagli acquisti nei siti appartenenti alla rete 18F
-    file: /docs/policy_sui_resi.pdf
+    file: https://prismatic-elf-7aa926.netlify.app/assets/uploads/policy-di-rimborso-recesso-e-cancellazione.pdf
   - title: Policy sulla sicurezza
     file: /docs/sicurezza.pdf
